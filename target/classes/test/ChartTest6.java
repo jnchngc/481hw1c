@@ -10,7 +10,7 @@ import org.jfree.data.general.PieDataset;
 import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
  
-public class PieChart_AWT extends ApplicationFrame {
+public class ChartTest6 extends ApplicationFrame {
    
    public PieChart_AWT( String title ) {
       super( title ); 
