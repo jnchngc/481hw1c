@@ -46,11 +46,32 @@ import org.jfree.data.general.PieDataset;
 import org.jfree.data.Range;
 import org.jfree.chart.ChartPanel;
 
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.geom.Rectangle2D;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartMouseEvent;
+import org.jfree.chart.ChartMouseListener;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.axis.ValueAxis;
+import org.jfree.chart.panel.CrosshairOverlay;
+import org.jfree.chart.plot.Crosshair;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+import org.jfree.data.xy.XYDataset;
+import org.jfree.data.xy.XYSeriesCollection;
+import org.jfree.ui.ApplicationFrame;
+import org.jfree.ui.RectangleEdge;
+
 /**
 * Here we save a legend to a PNG file...the legend has a lot of items, so we
 * apply a width constraint so it doesn't get too wide.
 */
-public class ChartTest1 {
+public class ChartTest3 {
 
   private static JFreeChart createChart(PieDataset dataset) {
 
