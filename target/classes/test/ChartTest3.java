@@ -58,6 +58,7 @@ import org.jfree.chart.ui.StandardGradientPaintTransformer;
 * apply a width constraint so it doesn't get too wide.
 */
 public class ChartTest3 {
+    MarkerChangeEvent lastEvent;
 
   private static JFreeChart createChart(PieDataset dataset) {
 
@@ -77,6 +78,32 @@ public class ChartTest3 {
         dataset.setValue("Samsung", new Double(50.0));
         dataset.setValue("Others", new Double(50.0));
         return dataset;
+    }
+
+    public void testSerialization() {
+        IntervalMarker m1 = new IntervalMarker(45.0, 50.0);
+        IntervalMarker m2 = (IntervalMarker) TestUtils.serialised(m1);
+        m1.equals(m2);
+    }
+
+    public void testGetSetStartValue() {
+        IntervalMarker m = new IntervalMarker(1.0, 2.0);
+        m.addChangeListener(this);
+        this.lastEvent = null;
+        // assertEquals(1.0, m.getStartValue(), EPSILON);
+        m.setStartValue(0.5);
+        // assertEquals(0.5, m.getStartValue(), EPSILON);
+        // assertEquals(m, this.lastEvent.getMarker());
+    }
+
+    public void testGetSetEndValue() {
+        IntervalMarker m = new IntervalMarker(1.0, 2.0);
+        m.addChangeListener(this);
+        this.lastEvent = null;
+        //assertEquals(2.0, m.getEndValue(), EPSILON);
+        m.setEndValue(0.5);
+        //assertEquals(0.5, m.getEndValue(), EPSILON);
+        //assertEquals(m, this.lastEvent.getMarker());
     }
 
     /**
@@ -113,6 +140,21 @@ public class ChartTest3 {
         m1.equals(m2);
         m2.setGradientPaintTransformer(t);
         m1.equals(m2);
+
+        /**
+     * Confirm that cloning works.
+     */
+        IntervalMarker m3 = new IntervalMarker(45.0, 50.0);
+        IntervalMarker m4 = (IntervalMarker) m3.clone();
+        boolean bo = (m3 != m4);
+        bo = (m3.getClass() == m4.getClass());
+        m3.equals(m4);
+
+
+        testSerialization();
+        testGetSetStartValue();
+        testGetSetEndValue();
+
 
 
 
