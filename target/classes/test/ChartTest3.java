@@ -80,32 +80,6 @@ public class ChartTest3 {
         return dataset;
     }
 
-    public void testSerialization() {
-        IntervalMarker m1 = new IntervalMarker(45.0, 50.0);
-        IntervalMarker m2 = (IntervalMarker) TestUtils.serialised(m1);
-        m1.equals(m2);
-    }
-
-    public void testGetSetStartValue() {
-        IntervalMarker m = new IntervalMarker(1.0, 2.0);
-        m.addChangeListener(this);
-        this.lastEvent = null;
-        // assertEquals(1.0, m.getStartValue(), EPSILON);
-        m.setStartValue(0.5);
-        // assertEquals(0.5, m.getStartValue(), EPSILON);
-        // assertEquals(m, this.lastEvent.getMarker());
-    }
-
-    public void testGetSetEndValue() {
-        IntervalMarker m = new IntervalMarker(1.0, 2.0);
-        m.addChangeListener(this);
-        this.lastEvent = null;
-        //assertEquals(2.0, m.getEndValue(), EPSILON);
-        m.setEndValue(0.5);
-        //assertEquals(0.5, m.getEndValue(), EPSILON);
-        //assertEquals(m, this.lastEvent.getMarker());
-    }
-
     /**
      * Entry point.
      *
@@ -156,7 +130,7 @@ public class ChartTest3 {
         // assertEquals(1.0, m.getStartValue(), EPSILON);
         m.setStartValue(0.5);
         m.getStartValue();
-        m.getEndValue()
+        m.getEndValue();
         
 
 

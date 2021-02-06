@@ -65,7 +65,6 @@ import org.jfree.chart.util.PublicCloneable;
 import java.awt.Color;
 import java.awt.geom.Rectangle2D;
 
-import org.jfree.chart.TestUtils;
 import org.jfree.chart.ui.RectangleInsets;
 
 
@@ -133,7 +132,7 @@ public class ChartTest5 {
         b1 = new EmptyBlock(1.1, 2.2);
         b1.equals(b2);
         b2 = new EmptyBlock(1.1, 2.2);
-        assertTrue(b1.equals(b2));
+        b1.equals(b2);
     }
 
     /**
