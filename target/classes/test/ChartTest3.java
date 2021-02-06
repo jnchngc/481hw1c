@@ -46,26 +46,12 @@ import org.jfree.data.general.PieDataset;
 import org.jfree.data.Range;
 import org.jfree.chart.ChartPanel;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.geom.Rectangle2D;
+import org.jfree.chart.event.MarkerChangeEvent;
+import org.jfree.chart.event.MarkerChangeListener;
+import org.jfree.chart.ui.GradientPaintTransformType;
+import org.jfree.chart.ui.GradientPaintTransformer;
+import org.jfree.chart.ui.StandardGradientPaintTransformer;
 
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartMouseEvent;
-import org.jfree.chart.ChartMouseListener;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.axis.NumberAxis;
-import org.jfree.chart.axis.ValueAxis;
-import org.jfree.chart.panel.CrosshairOverlay;
-import org.jfree.chart.plot.Crosshair;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.chart.plot.XYPlot;
-import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
-import org.jfree.data.xy.XYDataset;
-import org.jfree.data.xy.XYSeriesCollection;
-import org.jfree.ui.ApplicationFrame;
-import org.jfree.ui.RectangleEdge;
 
 /**
 * Here we save a legend to a PNG file...the legend has a lot of items, so we
@@ -92,48 +78,6 @@ public class ChartTest3 {
         dataset.setValue("Others", new Double(50.0));
         return dataset;
     }
-    private ChartPanel chartPanel;
-
-    private void createChartPanel(JFreeChart chart) {
-        chartPanel = new ChartPanel(chart);
-    
-        chartPanel.addChartMouseListener(new ChartMouseListener() {
-    
-            @Override//from   w  w  w.  j a  va  2s. com
-            public void chartMouseClicked(ChartMouseEvent arg0) {
-                //ignore
-            }
-    
-            @Override
-            public void chartMouseMoved(ChartMouseEvent event) {
-                Rectangle2D dataArea = chartPanel.getScreenDataArea();
-                JFreeChart chart = event.getChart();
-                XYPlot plot = (XYPlot) chart.getPlot();
-                ValueAxis xAxis = plot.getDomainAxis();
-                double x = xAxis.java2DToValue(event.getTrigger().getX(), dataArea, RectangleEdge.BOTTOM);
-                ValueAxis yAxis = plot.getRangeAxis();
-                double y = yAxis.java2DToValue(event.getTrigger().getY(), dataArea, RectangleEdge.LEFT);
-    
-                //Alternatively, obtain y for one of the subplots, which would be very neat.
-                //We should find the "nearest" subplot to the cursor -- this is easy
-                //double y = DatasetUtilities.findYValue(plot.getDataset(), 0, x);
-                xCrosshair.setValue(x);
-                yCrosshair.setValue(y);
-            }
-        });
-    
-        CrosshairOverlay crosshairOverlay = new CrosshairOverlay();
-        xCrosshair = new Crosshair(Double.NaN, Color.GRAY, new BasicStroke(0f));
-        xCrosshair.setLabelVisible(true);
-        yCrosshair = new Crosshair(Double.NaN, Color.GRAY, new BasicStroke(0f));
-        yCrosshair.setLabelVisible(true);
-        crosshairOverlay.addDomainCrosshair(xCrosshair);
-        crosshairOverlay.addRangeCrosshair(yCrosshair);
-        chartPanel.addOverlay(crosshairOverlay);
-    
-        chartPanel.setPreferredSize(new java.awt.Dimension(800, 600));
-        setContentPane(chartPanel);
-    }
 
     /**
      * Entry point.
@@ -143,6 +87,35 @@ public class ChartTest3 {
      * @throws IOException if there is an input/output problem.
      */
     public static void main(String[] args) throws IOException {
+
+
+        /**
+     * Confirm that the equals method can distinguish all the required fields.
+     */
+        IntervalMarker m1 = new IntervalMarker(45.0, 50.0);
+        IntervalMarker m2 = new IntervalMarker(45.0, 50.0);
+        m1.equals(m2);
+        m2.equals(m1);
+
+        m1 = new IntervalMarker(44.0, 50.0);
+        m1.equals(m2);
+        m2 = new IntervalMarker(44.0, 50.0);
+        m1.equals(m2);
+
+        m1 = new IntervalMarker(44.0, 55.0);
+        m1.equals(m2);
+        m2 = new IntervalMarker(44.0, 55.0);
+        m1.equals(m2);
+
+        GradientPaintTransformer t = new StandardGradientPaintTransformer(
+                GradientPaintTransformType.HORIZONTAL);
+        m1.setGradientPaintTransformer(t);
+        m1.equals(m2);
+        m2.setGradientPaintTransformer(t);
+        m1.equals(m2);
+
+
+
         PieDataset dataset = createDataset();
         JFreeChart chart = createChart(dataset); 
 
