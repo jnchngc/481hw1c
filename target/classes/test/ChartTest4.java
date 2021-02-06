@@ -85,6 +85,28 @@ public class ChartTest4 {
         c1.equals(c2);
         c2.setVisible(false);
         c1.equals(c2);
+
+        c1.setStroke(new BasicStroke(1.1f));
+        c1.equals(c2);
+        c2.setStroke(new BasicStroke(1.1f));
+        c1.equals(c2);
+
+        c1.setLabelVisible(true);
+        //assertFalse(c1.equals(c2));
+        c2.setLabelVisible(true);
+        //assertTrue(c1.equals(c2));
+
+        c1.setLabelAnchor(RectangleAnchor.TOP_LEFT);
+        c1.equals(c2);
+        c2.setLabelAnchor(RectangleAnchor.TOP_LEFT);
+        c1.equals(c2);
+
+        c1.setLabelGenerator(new StandardCrosshairLabelGenerator("Value = {0}",
+                NumberFormat.getNumberInstance()));
+        c1.equals(c2);
+        c2.setLabelGenerator(new StandardCrosshairLabelGenerator("Value = {0}",
+                NumberFormat.getNumberInstance()));
+        c1.equals(c2);
         /*
         c1.setValue(2.0);
         assertFalse(c1.equals(c2));
