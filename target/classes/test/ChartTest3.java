@@ -44,7 +44,7 @@ import org.jfree.chart.ui.UIUtils;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
 import org.jfree.data.Range;
-import org.jfree.chart.ChartPanel;
+import org.jfree.chart.plot.IntervalMarker;
 
 import org.jfree.chart.event.MarkerChangeEvent;
 import org.jfree.chart.event.MarkerChangeListener;
@@ -137,7 +137,6 @@ public class ChartTest3 {
         chart.draw(g22, new Rectangle2D.Double(0, 0, w, h));
         g22.dispose();
 
-        createChartPanel(chart);
 
         // ...and save it to a PNG image
         OutputStream out = new BufferedOutputStream(new FileOutputStream(
