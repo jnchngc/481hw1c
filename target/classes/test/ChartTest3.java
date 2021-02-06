@@ -46,6 +46,8 @@ import org.jfree.data.general.PieDataset;
 import org.jfree.data.Range;
 import org.jfree.chart.plot.IntervalMarker;
 
+import org.jfree.chart.TestUtils;
+
 import org.jfree.chart.event.MarkerChangeEvent;
 import org.jfree.chart.event.MarkerChangeListener;
 import org.jfree.chart.ui.GradientPaintTransformType;
