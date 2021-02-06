@@ -119,7 +119,7 @@ public class ChartTest3 {
      * Confirm that cloning works.
      */
         IntervalMarker m3 = new IntervalMarker(45.0, 50.0);
-        IntervalMarker m4 = (IntervalMarker) m3.clone();
+        IntervalMarker m4 = m3.clone();
         boolean bo = (m3 != m4);
         bo = (m3.getClass() == m4.getClass());
         m3.equals(m4);
