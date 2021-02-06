@@ -151,9 +151,26 @@ public class ChartTest3 {
         m3.equals(m4);
 
 
-        testSerialization();
-        testGetSetStartValue();
-        testGetSetEndValue();
+        //testSerialization();
+        IntervalMarker m5 = new IntervalMarker(45.0, 50.0);
+        IntervalMarker m6 = (IntervalMarker) TestUtils.serialised(m5);
+        m5.equals(m6);
+        //testGetSetStartValue();
+        IntervalMarker m = new IntervalMarker(1.0, 2.0);
+        m.addChangeListener(this);
+        this.lastEvent = null;
+        // assertEquals(1.0, m.getStartValue(), EPSILON);
+        m.setStartValue(0.5);
+        // assertEquals(0.5, m.getStartValue(), EPSILON);
+        // assertEquals(m, this.lastEvent.getMarker());
+        //testGetSetEndValue();
+        IntervalMarker m7 = new IntervalMarker(1.0, 2.0);
+        m7.addChangeListener(this);
+        this.lastEvent = null;
+        //assertEquals(2.0, m.getEndValue(), EPSILON);
+        m7.setEndValue(0.5);
+        //assertEquals(0.5, m.getEndValue(), EPSILON);
+        //assertEquals(m, this.lastEvent.getMarker());
 
 
 
