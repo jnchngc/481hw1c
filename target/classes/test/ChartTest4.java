@@ -52,6 +52,8 @@ import java.awt.Font;
 import java.awt.GradientPaint;
 import java.text.NumberFormat;
 
+import org.jfree.chart.plot.Crosshair;
+
 import org.jfree.chart.labels.StandardCrosshairLabelGenerator;
 import org.jfree.chart.ui.RectangleAnchor;
 import org.jfree.chart.util.PublicCloneable;
