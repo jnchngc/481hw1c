@@ -87,7 +87,9 @@
                 <configuration>
                     <source>${project.source.level}</source>
                     <target>${project.target.level}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>                
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <debug>true</debug>
+                    <debuglevel>lines,vars,source</debuglevel>                
                 </configuration>
             </plugin>
 
