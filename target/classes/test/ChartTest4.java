@@ -62,7 +62,6 @@ import org.jfree.chart.util.PublicCloneable;
 * apply a width constraint so it doesn't get too wide.
 */
 public class ChartTest4 {
-    MarkerChangeEvent lastEvent;
 
   
 
