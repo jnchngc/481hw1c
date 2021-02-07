@@ -2,6 +2,11 @@
 
 cobertura-instrument org/
 
+javac -cp /usr/share/java/cobertura.jar:. test/ChartTest2.java
+java -cp /usr/share/java/cobertura.jar:. test/ChartTest2
+javac -cp /usr/share/java/cobertura.jar:. test/ChartTest3.java
+java -cp /usr/share/java/cobertura.jar:. test/ChartTest3
+
 javac -cp /usr/share/java/cobertura.jar:. test/BarChart_AWT.java
 java -cp /usr/share/java/cobertura.jar:. test/BarChart_AWT
 
@@ -19,6 +24,12 @@ java -cp /usr/share/java/cobertura.jar:. test/BubbleChart_AWT
 
 javac -cp /usr/share/java/cobertura.jar:. test/TimeSeries_AWT.java
 java -cp /usr/share/java/cobertura.jar:. test/TimeSeries_AWT
+
+javac -cp /usr/share/java/cobertura.jar:. test/PieChart_File.java
+java -cp /usr/share/java/cobertura.jar:. test/PieChart_File
+
+javac -cp /usr/share/java/cobertura.jar:. test/PieChart_DB.java
+java -cp /usr/share/java/cobertura.jar:. test/PieChart_DB
 
 cobertura-check --totalline 100
 
