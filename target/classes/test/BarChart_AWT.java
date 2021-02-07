@@ -10,8 +10,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 public class BarChart_AWT {
    
-   public BarChart_AWT( String applicationTitle , String chartTitle ) {
-      super( applicationTitle );        
+   public BarChart_AWT( String applicationTitle , String chartTitle ) {        
       JFreeChart barChart = ChartFactory.createBarChart(
          chartTitle,           
          "Category",            
@@ -56,8 +55,6 @@ public class BarChart_AWT {
    
    public static void main( String[ ] args ) {
       BarChart_AWT chart = new BarChart_AWT("Car Usage Statistics", 
-         "Which car do you like?");
-      chart.pack( );            
-      chart.setVisible( true ); 
+         "Which car do you like?");         
    }
 }
