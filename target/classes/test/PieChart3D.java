@@ -6,7 +6,6 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart; 
 import org.jfree.chart.plot.PiePlot3D; 
 import org.jfree.data.general.DefaultPieDataset; 
-import org.jfree.chart.ChartUtilities;
 
 public class PieChart3D {
 
@@ -31,6 +30,5 @@ public class PieChart3D {
       int width = 640;   /* Width of the image */             
       int height = 480;  /* Height of the image */                             
       File pieChart3D = new File( "pie_Chart3D.jpeg" );                           
-      ChartUtilities.saveChartAsJPEG( pieChart3D , chart , width , height );   
    }
 }
