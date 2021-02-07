@@ -11,8 +11,7 @@ import org.jfree.data.general.PieDataset;
 public class PieChart_AWT {
    
    public PieChart_AWT( String title ) {
-      super( title ); 
-      setContentPane(createDemoPanel( ));
+      createDemoPanel( );
    }
    
    private static PieDataset createDataset( ) {
@@ -42,7 +41,6 @@ public class PieChart_AWT {
 
    public static void main( String[ ] args ) {
       PieChart_AWT demo = new PieChart_AWT( "Mobile Sales" );  
-      demo.setSize( 560 , 367 );    
-      demo.setVisible( true ); 
+
    }
 }

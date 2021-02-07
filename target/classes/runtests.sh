@@ -29,8 +29,8 @@ java -cp /usr/share/java/cobertura.jar:. test/BubbleChart_AWT
 javac -cp /usr/share/java/cobertura.jar:. test/TimeSeries_AWT.java
 java -cp /usr/share/java/cobertura.jar:. test/TimeSeries_AWT
 
-javac -cp /usr/share/java/cobertura.jar:. test/PieChart_DB.java
-java -cp /usr/share/java/cobertura.jar:. test/PieChart_DB
+javac -cp /usr/share/java/cobertura.jar:. test/PieChart_AWT.java
+java -cp /usr/share/java/cobertura.jar:. test/PieChart_AWT
 
 cobertura-check --totalline 100
 
