@@ -3,12 +3,10 @@ package test;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
-import org.jfree.ui.ApplicationFrame;
-import org.jfree.ui.RefineryUtilities;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-public class LineChart_AWT extends ApplicationFrame {
+public class LineChart_AWT {
 
    public LineChart_AWT( String applicationTitle , String chartTitle ) {
       super(applicationTitle);
@@ -41,7 +39,6 @@ public class LineChart_AWT extends ApplicationFrame {
          "Numer of Schools vs years");
 
       chart.pack( );
-      RefineryUtilities.centerFrameOnScreen( chart );
       chart.setVisible( true );
    }
 }

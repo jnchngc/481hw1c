@@ -6,10 +6,9 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset; 
 import org.jfree.data.category.DefaultCategoryDataset; 
-import org.jfree.ui.ApplicationFrame; 
-import org.jfree.ui.RefineryUtilities; 
 
-public class BarChart_AWT extends ApplicationFrame {
+
+public class BarChart_AWT {
    
    public BarChart_AWT( String applicationTitle , String chartTitle ) {
       super( applicationTitle );        
@@ -58,8 +57,7 @@ public class BarChart_AWT extends ApplicationFrame {
    public static void main( String[ ] args ) {
       BarChart_AWT chart = new BarChart_AWT("Car Usage Statistics", 
          "Which car do you like?");
-      chart.pack( );        
-      RefineryUtilities.centerFrameOnScreen( chart );        
+      chart.pack( );            
       chart.setVisible( true ); 
    }
 }

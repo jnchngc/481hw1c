@@ -7,10 +7,8 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
-import org.jfree.ui.ApplicationFrame;
-import org.jfree.ui.RefineryUtilities;
  
-public class PieChart_AWT extends ApplicationFrame {
+public class PieChart_AWT {
    
    public PieChart_AWT( String title ) {
       super( title ); 
@@ -45,7 +43,6 @@ public class PieChart_AWT extends ApplicationFrame {
    public static void main( String[ ] args ) {
       PieChart_AWT demo = new PieChart_AWT( "Mobile Sales" );  
       demo.setSize( 560 , 367 );    
-      RefineryUtilities.centerFrameOnScreen( demo );    
       demo.setVisible( true ); 
    }
 }
