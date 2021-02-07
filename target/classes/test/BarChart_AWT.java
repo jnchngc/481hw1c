@@ -21,7 +21,6 @@ public class BarChart_AWT {
          
       ChartPanel chartPanel = new ChartPanel( barChart );        
       chartPanel.setPreferredSize(new java.awt.Dimension( 560 , 367 ) );        
-      setContentPane( chartPanel ); 
    }
    
    private CategoryDataset createDataset( ) {
