@@ -9,7 +9,6 @@ import org.jfree.data.category.DefaultCategoryDataset;
 public class LineChart_AWT {
 
    public LineChart_AWT( String applicationTitle , String chartTitle ) {
-      super(applicationTitle);
       JFreeChart lineChart = ChartFactory.createLineChart(
          chartTitle,
          "Years","Number of Schools",
@@ -19,7 +18,6 @@ public class LineChart_AWT {
          
       ChartPanel chartPanel = new ChartPanel( lineChart );
       chartPanel.setPreferredSize( new java.awt.Dimension( 560 , 367 ) );
-      setContentPane( chartPanel );
    }
 
    private DefaultCategoryDataset createDataset( ) {
@@ -37,8 +35,5 @@ public class LineChart_AWT {
       LineChart_AWT chart = new LineChart_AWT(
          "School Vs Years" ,
          "Numer of Schools vs years");
-
-      chart.pack( );
-      chart.setVisible( true );
    }
 }
