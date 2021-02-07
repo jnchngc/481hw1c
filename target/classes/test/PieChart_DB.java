@@ -3,7 +3,6 @@ package test;
 import java.io.*; 
 import java.sql.*; 
 
-import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.ChartFactory; 
 import org.jfree.chart.JFreeChart; 
 import org.jfree.data.general.DefaultPieDataset;
@@ -46,6 +45,5 @@ public class PieChart_DB {
       int width = 560;    /* Width of the image */
       int height = 370;   /* Height of the image */ 
       File pieChart = new File( "Pie_Chart.jpeg" );
-      ChartUtilities.saveChartAsJPEG( pieChart , chart , width , height );
    }
 }
