@@ -87,7 +87,7 @@ public class BarChart_AWT {
 
       return dataset; 
    }
-   public static void main( String[ ] args ) {
+   public static void main(String[] args) throws IOException {
       CategoryDataset dataset = createDataset();
       JFreeChart chart = createChart("Car Usage Statistics", "Which car do you like?", dataset);
 
