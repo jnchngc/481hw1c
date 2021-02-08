@@ -50,6 +50,10 @@ public class BubbleChart_AWT {
       double ad2[ ] = { 4 , 5 , 10 , 8 , 9 , 6 };                 
       double ad3[][] = { ad , ad1 , ad2 };                 
       defaultxyzdataset.addSeries( "Series 1" , ad3 );
+      defaultxyzdataset.equals(ad1);
+      defaultxyzdataset.getDomainOrder();
+      defaultxyzdataset.getSeriesCount();
+      defaultxyzdataset.getItemCount(1);
                    
       return defaultxyzdataset; 
    }
